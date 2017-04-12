@@ -23,7 +23,7 @@ gitlab-data:
   image: gitlab/gitlab-ce:latest
   volume_driver: rancher-nfs
   volumes:
-  - gitlab-etc:/etc/gitlab
-  - gitlab-log:/var/log/gitlab
-  - gitlab-opt:/var/opt/gitlab
+  - ${storage_prefix}-etc:/etc/gitlab
+  - ${storage_prefix}-log:/var/log/gitlab
+  - ${storage_prefix}-opt:/var/opt/gitlab
 

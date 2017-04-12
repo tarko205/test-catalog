@@ -41,6 +41,12 @@
       required: true
       default: 22
       type: "string"
+    - variable: "storage_prefix"
+      description: "Storage prefix name."
+      label: "Storage Prefix:"
+      required: true
+      default: 
+      type: "string"
 
 gitlab-server:
   scale: 1
