@@ -59,7 +59,3 @@ gitlab-server:
     response_timeout: 2000
     healthy_threshold: 2
 
-gitlab-data:
-  scale: 1
-  retain_ip: true
-
