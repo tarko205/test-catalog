@@ -1,37 +1,26 @@
 version: '2'
 volumes: #most volumes mappings require optimization (now all volumes map all containers) 
   etcjobservice:
-    #external: true
     driver: ${volumedriver}
   etcnginx:
-    #external: true
     driver: ${volumedriver}
   etcregistry:
-    #external: true
     driver: ${volumedriver}
   etcui:
-    #external: true
     driver: ${volumedriver}
   configjobservice:
-    #external: true
     driver: ${volumedriver}
   configdb:
-    #external: true
     driver: ${volumedriver}
   configui:
-    #external: true
     driver: ${volumedriver}
   data: #according to the eng team this is not even needed (but leaving it in for consistency)
-    #external: true
     driver: ${volumedriver}
   data-registry:
-    #external: true
     driver: ${volumedriver}
   data-database:
-    #external: true
     driver: ${volumedriver}
   data-job_logs:
-    #external: true
     driver: ${volumedriver}
 services:
   harbor-setupwrapper:
@@ -63,7 +52,6 @@ services:
       - 1514:514
     labels:
       io.rancher.scheduler.global: 'true'
-      io.rancher.scheduler.affinity:host_label: harbor-log=true
       io.rancher.scheduler.affinity:container_label_soft_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
       io.rancher.container.hostname_override: container_name
   registry:
